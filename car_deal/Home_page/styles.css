@@ -1,0 +1,303 @@
+/* Global Styles */
+:root {
+    --primary-color: #1a1a1a;
+    --accent-color: #c8a45d;
+    --text-light: #ffffff;
+    --text-dark: #333333;
+    --transition: all 0.3s ease;
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    background: var(--primary-color);
+    color: var(--text-light);
+  }
+  
+  /* Navbar Styles */
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.95);
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .logo {
+    height: 40px;
+    width: auto;
+    transition: var(--transition);
+  }
+  
+  .logo:hover {
+    transform: scale(1.05);
+  }
+  
+  .search-bar-container {
+    flex: 0 1 600px;
+    position: relative;
+    margin: 0 2rem;
+  }
+  
+  .search-bar {
+    width: 100%;
+    padding: 0.8rem 1.2rem;
+    border: 2px solid rgba(200, 164, 93, 0.3);
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-light);
+    font-size: 0.95rem;
+    transition: var(--transition);
+  }
+  
+  .search-bar:focus {
+    outline: none;
+    border-color: var(--accent-color);
+    background: rgba(255, 255, 255, 0.1);
+  }
+  
+  .search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: rgba(26, 26, 26, 0.98);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    display: none;
+  }
+  
+  .nav-icons {
+    display: flex;
+    gap: 1.5rem;
+  }
+  
+  .nav-icons i {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    cursor: pointer;
+    transition: var(--transition);
+  }
+  
+  .nav-icons i:hover {
+    color: var(--text-light);
+    transform: scale(1.1);
+  }
+
+
+
+
+
+  .navbar { background-color: #333; padding: 1rem; color: #fff; }
+.navbar .container { display: flex; justify-content: space-between; align-items: center; }
+.navbar-brand { display: flex; align-items: center; color: #fff; text-decoration: none; font-size: 1.5rem; }
+.navbar-logo { height: 40px; margin-right: 10px; }
+.navbar-nav { list-style: none; display: flex; margin: 0; padding: 0; }
+.nav-item { margin: 0 10px; }
+.nav-link { color: #fff; text-decoration: none; }
+.navbar-account, .navbar-auth { display: flex; align-items: center; }
+.logout-button, .login-button, .register-button { margin-left: 10px; color: #fff; text-decoration: none; }
+ 
+
+
+
+
+
+
+  /* Hero Section */
+  .hero {
+    height: 80vh;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    ),
+
+    /* <img src="./images/assets/hero-background.jpg" alt="hero-background"> */
+   url('./images/assets/background.jpg');  
+   
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    margin-top: 60px;
+  }
+  
+  .hero h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  /* Brand Logos Section */
+  .brand-logos {
+    padding: 4rem 2rem;
+    background: rgba(255, 255, 255, 0.02);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 3rem;
+    align-items: center;
+  }
+  
+  .brand-logo {
+    width: 120px;
+    height: 120px;
+    object-fit: contain;
+    filter: grayscale(100%) brightness(1.2);
+    transition: var(--transition);
+    margin: 0 auto;
+  }
+  
+  .brand-logo:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+  }
+  
+  /* Cars Grid */
+  .cars-grid {
+    padding: 4rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+  
+  .car-card {
+    background: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: var(--transition);
+    border: 1px solid rgba(200, 164, 93, 0.1);
+  }
+  
+  .car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    border-color: var(--accent-color);
+  }
+  
+  .car-image {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    transition: var(--transition);
+  }
+  
+  .car-card:hover .car-image {
+    transform: scale(1.05);
+  }
+  
+  .car-details {
+    padding: 1.5rem;
+  }
+  
+  .car-title {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    margin-bottom: 0.8rem;
+  }
+  
+  .car-specs {
+    display: grid;
+    gap: 0.5rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  
+  .car-specs p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  /* Brand Page Specific */
+  .brand-header {
+    background: linear-gradient(
+      to bottom,
+      rgba(26, 26, 26, 0.95),
+      rgba(26, 26, 26, 0.8)
+    );
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-top: 60px;
+  }
+  
+  .brand-header img {
+    width: 150px;
+    height: 150px;
+    object-fit: contain;
+    margin-bottom: 1.5rem;
+    filter: brightness(1.2);
+  }
+  
+  .brand-header h1 {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 1rem;
+    }
+    
+    .search-bar-container {
+      margin: 0 1rem;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .brand-logos {
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 2rem;
+      padding: 2rem 1rem;
+    }
+    
+    .brand-logo {
+      width: 100px;
+      height: 100px;
+    }
+    
+    .cars-grid {
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      padding: 2rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero h1 {
+      font-size: 2rem;
+    }
+    
+    .brand-header img {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .brand-header h1 {
+      font-size: 2rem;
+    }
+  }
